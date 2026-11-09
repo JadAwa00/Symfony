@@ -1,0 +1,22 @@
+parameters:
+    app.dev_secret: '%env(APP_SECRET)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Kernel.php'
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Tests/'
+
+    Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver:
+        arguments:
+            $controllerLocator: '@debug.controller_locator'
+
+    Symfony\Component\HttpFoundation\Request:
+        alias: '@request'

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Bienvenue dans SymfonySandbox{% endblock %}
+
+{% block body %}
+    <p>Ce projet est votre <strong>bac à sable</strong> pour tester toutes les commandes et fonctionnalités Symfony vues en cours.</p>
+
+    <h2>✅ Ce qui a été configuré</h2>
+    <ul>
+        <li>✅ Projet Symfony créé avec <code>symfony new SymfonySandbox --webapp</code></li>
+        <li>✅ Apache pack installé avec <code>composer require symfony/apache-pack</code></li>
+        <li>✅ Accès via Apache sur <code>/var/www/html/SymfonySandbox/public</code></li>
+    </ul>
+
+    <h2>🎯 Contrôleurs disponibles pour tester</h2>
+    <ul>
+        <li><a href="{{ path('app_home') }}">/</a> — Page d'accueil</li>
+        <li><a href="{{ path('app_hello') }}">/hello</a> — Route simple sans paramètre</li>
+        <li><a href="{{ path('app_hello_name', {'name': 'Développeur'}) }}">/hello/Développeur</a> — Route avec paramètre</li>
+        <li><a href="{{ path('app_greet', {'name': 'Bob', 'times': 2}) }}">/greet/Bob/2</a> — Paramètre optionnel</li>
+        <li><a href="{{ path('app_math', {'a': 7, 'b': 3}) }}">/math/7/3</a> — Plusieurs paramètres</li>
+        <li><a href="{{ path('app_datetime') }}">/datetime</a> — Affiche la date/heure</li>
+        <li><a href="{{ path('app_json') }}">/json</a> — Retourne du JSON</li>
+        <li><a href="{{ path('app_student') }}">/student</a> — Template étudiant</li>
+    </ul>
+
+    <h2>🛠️ Commandes Symfony CLI à tester</h2>
+    <ul>
+        <li><code>php bin/console list</code> — Liste toutes les commandes</li>
+        <li><code>php bin/console debug:router</code> — Affiche les routes configurées</li>
+        <li><code>php bin/console make:controller NomController</code> — Génère un controller</li>
+        <li><code>php bin/console cache:clear</code> — Vide le cache</li>
+        <li><code>php bin/console server:run</code> — Démarre le serveur de dev</li>
+    </ul>
+{% endblock %}

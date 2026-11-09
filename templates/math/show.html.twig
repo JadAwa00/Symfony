@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Calcul : {{ a }} + {{ b }}{% endblock %}
+
+{% block body %}
+    <p>Calcul de <span class="highlight">{{ a }} + {{ b }}</span></p>
+    <p><strong>Résultat : {{ result }}</strong></p>
+
+    <h3>Opérations</h3>
+    <ul>
+        <li>Addition : {{ a }} + {{ b }} = {{ a + b }}</li>
+        <li>Soustraction : {{ a }} - {{ b }} = {{ a - b }}</li>
+        <li>Multiplication : {{ a }} × {{ b }} = {{ a * b }}</li>
+        {% if b != 0 %}
+        <li>Division : {{ a }} ÷ {{ b }} = {{ a / b }}</li>
+        {% else %}
+        <li>Division : impossible (division par zéro)</li>
+        {% endif %}
+    </ul>
+{% endblock %}

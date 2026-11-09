@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Fiche Élève{% endblock %}
+
+{% block body %}
+    <h2>{{ student.name }}</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Nom :</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">{{ student.name }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Prénom :</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">{{ student.firstname }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Classe :</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">{{ student.class }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Note Moyenne :</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">{{ student.average }}/20</td>
+        </tr>
+    </table>
+{% endblock %}

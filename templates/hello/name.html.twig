@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Bonjour, {{ name }}{% endblock %}
+
+{% block body %}
+    <p>Bonjour <strong>{{ name }}</strong> ! 👋</p>
+    <p>Ce message est généré dynamiquement à partir du paramètre de la route <code>/hello/{name}</code>.</p>
+
+    <h2>Exemple avec d'autres noms</h2>
+    <ul>
+        <li><a href="{{ path('app_hello_name', {'name': 'Alice'}) }}">Bonjour Alice</a></li>
+        <li><a href="{{ path('app_hello_name', {'name': 'Bob'}) }}">Bonjour Bob</a></li>
+        <li><a href="{{ path('app_hello_name', {'name': 'Symfony'}) }}">Bonjour Symfony</a></li>
+    </ul>
+{% endblock %}

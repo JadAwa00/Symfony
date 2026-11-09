@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Réponse JSON{% endblock %}
+
+{% block body %}
+    <p>Cette route retourne une réponse JSON (voir navigateur → Réponse du serveur).</p>
+    <p>Les données envoyées sont :</p>
+    <ul>
+        <li><code>status</code> : {{ status_text }}</li>
+        <li><code>timestamp</code> : {{ data.timestamp|date('d/m/Y H:i:s') }}</li>
+        <li><code>app_name</code> : {{ app_name }}</li>
+        <li><code>symfony_version</code> : {{ symfony_version }}</li>
+    </ul>
+{% endblock %}

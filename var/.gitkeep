@@ -1,0 +1,2 @@
+# Ce fichier vide est ici pour garantir que le dossier var/ existe dans Git
+# Les fichiers de cache et de logs seront générés ici au runtime

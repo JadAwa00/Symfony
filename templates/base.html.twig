@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}SymfonySandbox{% endblock %}</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 0 20px;
+                background-color: #f5f5f5;
+            }
+            h1 {
+                color: #333;
+                border-bottom: 2px solid #3b5998;
+                padding-bottom: 10px;
+            }
+            nav a {
+                margin-right: 15px;
+                color: #3b5998;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            nav a:hover {
+                text-decoration: underline;
+            }
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .highlight {
+                background-color: #e7f3ff;
+                padding: 2px 5px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ path('app_home') }}">Accueil</a>
+            <a href="{{ path('app_hello') }}">Bonjour</a>
+            <a href="{{ path('app_hello_name', {'name': 'Monde'}) }}">Bonjour Nom</a>
+            <a href="{{ path('app_greet', {'name': 'Alice', 'times': 3}) }}">Salutations</a>
+            <a href="{{ path('app_math', {'a': 10, 'b': 5}) }}">Calcul</a>
+            <a href="{{ path('app_datetime') }}">Date/Heure</a>
+            <a href="{{ path('app_json') }}">JSON</a>
+            <a href="{{ path('app_student') }}">Étudiant</a>
+        </nav>
+        <h1>{% block page_title %}SymfonySandbox - Bac à sable{% endblock %}</h1>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
